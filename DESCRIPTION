@@ -34,5 +34,4 @@ Imports:
     leaflet (>= 2.0.0)
 Suggests:
     cartography (>= 2.4),
-    rgdal,
     tinytest

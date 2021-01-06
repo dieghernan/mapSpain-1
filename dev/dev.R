@@ -5,7 +5,6 @@ remotes::install_github("rOpenSpain/mapSpain")
 tinytest::test_all()
 
 
-
 a <- esp_get_ccaa()
 
 f <- esp_get_hex_ccaa()

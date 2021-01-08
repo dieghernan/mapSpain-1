@@ -48,7 +48,7 @@ This script highlights some features of `mapSpain`:
 ``` r
 library(mapSpain)
 library(sf)
-#> Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1
+#> Linking to GEOS 3.5.1, GDAL 2.2.2, PROJ 4.9.2
 
 census <- mapSpain::pobmun19
 
@@ -183,11 +183,11 @@ it will load it, speeding up the process.
 
 Some packages recommended for visualization are:
 
--   [`tmap`](https://mtennekes.github.io/tmap/)  
--   [`cartography`](http://riatelab.github.io/cartography/docs/)
--   [`ggplot2`](https://github.com/tidyverse/ggplot2) +
+  - [`tmap`](https://mtennekes.github.io/tmap/)  
+  - [`cartography`](http://riatelab.github.io/cartography/docs/)
+  - [`ggplot2`](https://github.com/tidyverse/ggplot2) +
     [`ggspatial`](https://github.com/paleolimbot/ggspatial)
--   [`leaflet`](https://rstudio.github.io/leaflet/)
+  - [`leaflet`](https://rstudio.github.io/leaflet/)
 
 ## Contribute
 
@@ -201,7 +201,7 @@ This package uses data from **GISCO**. GISCO
 open data repository including several data sets at several resolution
 levels.
 
-*From GISCO &gt; Geodata &gt; Reference data &gt; Administrative Units /
+*From GISCO \> Geodata \> Reference data \> Administrative Units /
 Statistical Units*
 
 When data downloaded from this page is used in any printed or electronic

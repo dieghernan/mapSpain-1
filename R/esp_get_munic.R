@@ -2,6 +2,9 @@
 #' @name esp_get_munic
 #' @description Loads a simple feature (\code{sf}) object containing the
 #' municipalities boundaries of Spain.
+#'
+#' \code{esp_get_munic} use GISCO (Eurostat) as source.
+#'
 #' @return A \code{POLYGON} object.
 #' @source \href{https://gisco-services.ec.europa.eu/distribution/v2/}{GISCO API}
 #' @author dieghernan, \url{https://github.com/dieghernan/}
@@ -9,8 +12,7 @@
 #'
 #'
 #' @param year,epsg,cache,update_cache,cache_dir,verbose,moveCAN
-#' See \link{esp_get_nuts}. Years available: 2001, 2004, 2006,
-#' 2008, 2010, 2013 and any year between 2016 and 2019.
+#' See \link{esp_get_nuts}. See Details for years available.
 #' @param region A vector of names and/or codes for provinces
 #'  or \code{NULL} to get all the municipalities. See Details.
 #' @param munic A name or regex expression with the names of the required
@@ -22,8 +24,11 @@
 #'
 #' When calling a superior level (Province, Autonomous Community or NUTS1) ,
 #' all the municipalities of that level would be added.
-#' @examples
 #'
+#' On \code{esp_get_munic} years available are: 2001, 2004, 2006,
+#' 2008, 2010, 2013 and any year between 2016 and 2019.
+#'
+#' @examples
 #'
 #' library(sf)
 #'
@@ -182,7 +187,7 @@ esp_get_munic <- function(year = "2019",
 
   if (!is.null(munic)) {
     munic <- paste(munic, collapse = "|")
-    data.sf <- data.sf[grep(munic, data.sf$name),]
+    data.sf <- data.sf[grep(munic, data.sf$name), ]
   }
 
 
@@ -195,7 +200,7 @@ esp_get_munic <- function(year = "2019",
     df <- df[df$nuts3.code %in% tonuts, "cpro"]
     toprov <- unique(df)
 
-    data.sf <- data.sf[data.sf$cpro %in% toprov,]
+    data.sf <- data.sf[data.sf$cpro %in% toprov, ]
   }
 
   if (nrow(data.sf) == 0) {
@@ -226,8 +231,8 @@ esp_get_munic <- function(year = "2019",
       }
 
       data.sf <- sf::st_transform(data.sf, 3857)
-      PENIN <- data.sf[-grep("05", data.sf$codauto),]
-      CAN <- data.sf[grep("05", data.sf$codauto),]
+      PENIN <- data.sf[-grep("05", data.sf$codauto), ]
+      CAN <- data.sf[grep("05", data.sf$codauto), ]
 
       # Move CAN
       CAN <- sf::st_sf(
@@ -247,7 +252,7 @@ esp_get_munic <- function(year = "2019",
 
   data.sf <- sf::st_transform(data.sf, as.double(init_epsg))
   data.sf <-
-    data.sf[order(data.sf$codauto, data.sf$cpro, data.sf$cmun),]
+    data.sf[order(data.sf$codauto, data.sf$cpro, data.sf$cmun), ]
 
   return(data.sf)
 }

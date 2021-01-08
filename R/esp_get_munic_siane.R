@@ -16,22 +16,6 @@
 #' year ("YYYY" format, as end of year) or as a specific
 #' date ("YYYY-MM-DD" format). Historical information starts as of 2005.
 #'
-#'
-#' @examples
-#'
-#' Base2 <- esp_get_munic_siane(region = c("Andalucia"))
-#' SAN2 <-
-#'   esp_get_munic(
-#'     region = c("Andalucia"),
-#'     munic = c("San", "Santa")
-#'   )
-#'
-#'
-#' plot(st_geometry(Base2), col = "cornsilk", border = "grey80")
-#' plot(st_geometry(SAN2),
-#'      col = "firebrick3",
-#'      border = NA,
-#'      add = TRUE)
 #' @export
 esp_get_munic_siane <- function(year = "2019",
                                 epsg = "4258",

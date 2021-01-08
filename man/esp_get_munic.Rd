@@ -97,20 +97,6 @@ plot(st_geometry(SAN),
      col = "firebrick3",
      border = NA,
      add = TRUE)
-
-Base2 <- esp_get_munic_siane(region = c("Andalucia"))
-SAN2 <-
-  esp_get_munic(
-    region = c("Andalucia"),
-    munic = c("San", "Santa")
-  )
-
-
-plot(st_geometry(Base2), col = "cornsilk", border = "grey80")
-plot(st_geometry(SAN2),
-     col = "firebrick3",
-     border = NA,
-     add = TRUE)
 }
 \seealso{
 \link{esp_get_nuts},\link{esp_munic.sf}, \link{esp_codelist}

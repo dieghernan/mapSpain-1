@@ -48,10 +48,20 @@ expect_equal(nrow(n), 52)
 # SIANE
 
 expect_error(esp_get_prov_siane("FFF"))
+expect_error(esp_get_prov_siane(epsg = 39823))
 expect_silent(esp_get_prov_siane())
+expect_silent(esp_get_prov_siane(moveCAN = c(1, 2)))
 expect_silent(esp_get_prov_siane(prov = c("Galicia", "ES7", "Centro")))
 expect_warning(esp_get_prov_siane(prov = "Menorca"))
 expect_warning(esp_get_prov_siane(prov = "ES6x"))
+
+
+expect_equal(sf::st_crs(esp_get_prov_siane(epsg = 3035)),
+             sf::st_crs(3035))
+
+expect_equal(sf::st_crs(esp_get_prov_siane(epsg = 3857)),
+             sf::st_crs(3857))
+
 
 expect_silent(esp_get_prov_siane(prov = c(
   "Euskadi",

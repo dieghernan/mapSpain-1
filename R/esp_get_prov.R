@@ -188,6 +188,8 @@ esp_get_prov <- function(prov = NULL, ...) {
 #' 2005 up to today.
 #' @source IGN data via a custom CDN (see
 #' \url{https://github.com/rOpenSpain/mapSpain/tree/sianedata}).
+#' @export
+#'
 #'
 #' @param resolution Resolution of the polygon. Values available are
 #' \code{"3", "6.5"} or  \code{"10"}.

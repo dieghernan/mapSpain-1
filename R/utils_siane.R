@@ -24,6 +24,9 @@ esp_hlp_download_siane <- function(type,
   if (type == "munic") {
     filename <-
       paste0("se89_", resolution, "_admin_muni_a_", sub, ".gpkg")
+  } else if (type == "prov") {
+    filename <-
+      paste0("se89_", resolution, "_admin_prov_a_", sub, ".gpkg")
   }
 
   url <- file.path(api_entry, filename)

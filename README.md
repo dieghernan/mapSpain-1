@@ -48,7 +48,6 @@ This script highlights some features of `mapSpain`:
 ``` r
 library(mapSpain)
 library(sf)
-#> Linking to GEOS 3.5.1, GDAL 2.2.2, PROJ 4.9.2
 
 census <- mapSpain::pobmun19
 
@@ -196,6 +195,13 @@ code](https://github.com/ropenspain/mapSpain/).
 
 ## Copyright notice
 
+This package used data from CartoBase SIANE, provided by Instituto
+Geográfico Nacional:
+
+> Atlas Nacional de España (ANE) [CC
+> BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)
+> [ign.es](https://www.ign.es/)
+
 This package uses data from **GISCO**. GISCO
 [(FAQ)](https://ec.europa.eu/eurostat/web/gisco/faq) is a geospatial
 open data repository including several data sets at several resolution
@@ -204,21 +210,21 @@ levels.
 *From GISCO \> Geodata \> Reference data \> Administrative Units /
 Statistical Units*
 
-When data downloaded from this page is used in any printed or electronic
-publication, in addition to any other provisions applicable to the whole
-Eurostat website, data source will have to be acknowledged in the legend
-of the map and in the introductory page of the publication with the
-following copyright notice:
-
-EN: © EuroGeographics for the administrative boundaries
-
-FR: © EuroGeographics pour les limites administratives
-
-DE: © EuroGeographics bezüglich der Verwaltungsgrenzen
-
-For publications in languages other than English, French or German, the
-translation of the copyright notice in the language of the publication
-shall be used.
+> When data downloaded from this page is used in any printed or
+> electronic publication, in addition to any other provisions applicable
+> to the whole Eurostat website, data source will have to be
+> acknowledged in the legend of the map and in the introductory page of
+> the publication with the following copyright notice:
+> 
+> EN: © EuroGeographics for the administrative boundaries
+> 
+> FR: © EuroGeographics pour les limites administratives
+> 
+> DE: © EuroGeographics bezüglich der Verwaltungsgrenzen
+> 
+> For publications in languages other than English, French or German,
+> the translation of the copyright notice in the language of the
+> publication shall be used.
 
 If you intend to use the data commercially, please contact
 EuroGeographics for information regarding their license agreements.

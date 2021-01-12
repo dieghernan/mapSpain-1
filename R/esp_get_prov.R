@@ -79,6 +79,11 @@ esp_get_prov <- function(prov = NULL, ...) {
 
   data.sf <- do.call(mapSpain::esp_get_nuts,  params)
 
+  # Avoid warning on union
+  initcrs <- sf::st_crs(data.sf)
+  data.sf <- sf::st_transform(data.sf, 3035)
+
+
   data.sf$nuts3.code <- data.sf$NUTS_ID
   data.sf <- data.sf[, "nuts3.code"]
 
@@ -176,6 +181,10 @@ esp_get_prov <- function(prov = NULL, ...) {
 
   # Order
   data.sf <- data.sf[order(data.sf$codauto, data.sf$cpro), ]
+
+  # Transform
+
+  data.sf <- sf::st_transform(data.sf, initcrs)
 
   return(data.sf)
 }
@@ -324,3 +333,4 @@ esp_get_prov_siane <- function(prov = NULL,
 
   return(data.sf)
 }
+

@@ -27,6 +27,9 @@ esp_hlp_download_siane <- function(type,
   } else if (type == "prov") {
     filename <-
       paste0("se89_", resolution, "_admin_prov_a_", sub, ".gpkg")
+  } else if (type == "ccaa") {
+    filename <-
+      paste0("se89_", resolution, "_admin_ccaa_a_", sub, ".gpkg")
   }
 
   url <- file.path(api_entry, filename)
@@ -143,6 +146,12 @@ esp_hlp_get_siane <- function(type,
     esp_hlp_download_siane(type, resolution, cache, cache_dir, update_cache,
                            verbose, "y")
 
+  # CCAA
+  if (type == "ccaa") {
+    data.sf1$x_cap2 <- NA
+    data.sf1$y_cap2 <- NA
+    data.sf1 <- data.sf1[, colnames(data.sf2)]
+  }
 
   # Transform and bind
   data.sf2 <- sf::st_transform(data.sf2, sf::st_crs(data.sf1))

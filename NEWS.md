@@ -3,8 +3,8 @@
 * Fix DOI <https://doi.org/10.5281/zenodo.4318024>
 * WIP: Include CartoBase ANE data <https://github.com/rOpenSpain/mapSpain/tree/sianedata>
   * `mapSpain::esp_get_munic_siane()`
-
-
+  * `mapSpain::esp_get_prov_siane()`
+  * `mapSpain::esp_get_ccaa_siane()`
 
 # mapSpain 0.1.2
 

@@ -20,6 +20,7 @@ expect_equal(length(unique(s$cpro)), 52)
 # SIANE
 
 expect_silent(esp_get_munic_siane())
+expect_silent(esp_get_munic_siane(rawcols = TRUE))
 
 expect_message(esp_get_munic_siane(verbose = TRUE))
 expect_message(esp_get_munic_siane(verbose = TRUE, update_cache = TRUE))

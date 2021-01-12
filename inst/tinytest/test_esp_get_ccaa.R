@@ -36,10 +36,11 @@ expect_equal(nrow(n), 19)
 
 # Test siane
 
-
 expect_error(esp_get_ccaa_siane("FFF"))
 expect_error(esp_get_ccaa_siane(epsg = "FFF"))
 expect_silent(esp_get_ccaa_siane())
+expect_silent(esp_get_ccaa_siane("Canarias"))
+expect_silent(esp_get_ccaa_siane(rawcols = TRUE))
 expect_silent(esp_get_ccaa_siane(ccaa = c("Galicia", "ES7", "Centro")))
 expect_error(esp_get_ccaa_siane(epsg = 39823))
 expect_silent(esp_get_ccaa_siane())

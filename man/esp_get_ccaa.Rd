@@ -106,6 +106,9 @@ Random <-
     "ES52",
     "01"
   ))
+
+Random <- st_cast(Random, "MULTIPOLYGON")
+
 plot(st_geometry(Random), col = hcl.colors(6))
 
 # All CCAA of a Zone plus an addition
